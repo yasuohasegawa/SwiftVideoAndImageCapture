@@ -137,15 +137,6 @@ class VideoAndImageCapture: NSObject,AVCaptureVideoDataOutputSampleBufferDelegat
                     
                     self.videoWriter = nil
                     
-                    PHPhotoLibrary.shared().performChanges({
-                        PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: self.fileURL as URL)
-                    }) { saved, error in
-                        if saved {
-                            // 動画書き込み終了
-                            print("mp4 saved!")
-                        }
-                    }
-                    
                 }
             }
         }
